@@ -20,10 +20,13 @@ Login::~Login()
     delete ui;
 }
 
+
 void Login::on_pushButton_clicked()
 {
     QString username = ui->lineEditLogin->text();
     QString password = ui->lineEditPassword->text();
+    QString user = ui->lineEditLogin->text();
+
 
     if(username.isEmpty() || password.isEmpty()) {
         ui->Status->setText("Please enter username and password.");
@@ -59,12 +62,14 @@ void Login::on_pushButton_clicked()
                 analytic->setAttribute(Qt::WA_DeleteOnClose); // Автоматическое удаление
                 analytic->show();
                 this->hide();
+                m_dataObject->setStringData(user);
             } else {
                 connClose();
                 Profile *profile = new Profile(this);
                 profile->setAttribute(Qt::WA_DeleteOnClose); // Автоматическое удаление
                 profile->show();
                 this->hide();
+
             }
 }
         }
@@ -74,3 +79,12 @@ void Login::on_pushButton_clicked()
     }
     connClose();
 }
+
+void Login::on_pushButton_2_clicked()
+{
+    Registration *regist = new Registration(this);
+    regist->setAttribute(Qt::WA_DeleteOnClose);
+    regist->show();
+    this->hide();
+}
+

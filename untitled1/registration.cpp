@@ -65,9 +65,9 @@ void Registration::on_pushButton_clicked()
                 if (qry2.exec()) {
                     conn.connClose();
                     // Создание и показ окна Profile
-                    Analytic *analytic = new Analytic(this);
-                    analytic->setAttribute(Qt::WA_DeleteOnClose); // Автоматическое удаление
-                    analytic->show();
+                    Profile *profile = new Profile(this);
+                    profile->setAttribute(Qt::WA_DeleteOnClose); // Автоматическое удаление
+                    profile->show();
                     this->hide();
                 }
             }
