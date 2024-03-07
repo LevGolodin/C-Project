@@ -5,7 +5,6 @@
 #include <QtSql>
 #include <QDebug>
 #include <QFileInfo>
-#include "dataobject.h"
 
 namespace Ui {
 class Login;
@@ -15,8 +14,6 @@ class Login : public QMainWindow
 {
     Q_OBJECT
 
-signals:
-    void stringDataChanged(QString user);
 
 public:
     QSqlDatabase mydb;
@@ -47,12 +44,14 @@ public:
 public slots:
     void on_pushButton_clicked();
 
+signals:
+    void mySignal(const QString &text);
+
 private slots:
     void on_pushButton_2_clicked();
 
 private:
     Ui::Login *ui;
-    DataObject *m_dataObject;
 };
 
 #endif // LOGIN_H

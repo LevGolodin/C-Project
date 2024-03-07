@@ -1,0 +1,17 @@
+release/aboutus.o
+release/analytic.o
+release/cons.o
+release/crew.o
+release/login.o
+release/main.o
+release/mainwindow.o
+release/profile.o
+release/registration.o
+release/moc_aboutus.o
+release/moc_analytic.o
+release/moc_cons.o
+release/moc_crew.o
+release/moc_login.o
+release/moc_mainwindow.o
+release/moc_profile.o
+release/moc_registration.o

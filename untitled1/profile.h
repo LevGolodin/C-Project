@@ -12,8 +12,6 @@ class Profile : public QMainWindow
 {
     Q_OBJECT
 
-public slots:
-    void recieveStringData(QString user);
 
 
 
@@ -23,6 +21,11 @@ public:
 
 private:
     Ui::Profile *ui;
+
+
+public slots:
+    void mySlot(const QString text);
 };
+
 
 #endif // PROFILE_H

@@ -14,7 +14,8 @@ Profile::~Profile()
     delete ui;
 }
 
-void Profile::recieveStringData(QString user)
+void Profile::mySlot(const QString text)
 {
-    qDebug() << user;
+    QString user = text;
+    ui->label_2->setText(user);
 }

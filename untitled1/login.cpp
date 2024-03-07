@@ -13,6 +13,8 @@ Login::Login(QWidget *parent) :
     ui(new Ui::Login)
 {
     ui->setupUi(this);
+    Profile *profile = new Profile;
+    connect(this,SIGNAL(mySignal(const QString &)), profile,SLOT(mySlot(const QString &)));
 }
 
 Login::~Login()
@@ -25,7 +27,6 @@ void Login::on_pushButton_clicked()
 {
     QString username = ui->lineEditLogin->text();
     QString password = ui->lineEditPassword->text();
-    QString user = ui->lineEditLogin->text();
 
 
     if(username.isEmpty() || password.isEmpty()) {
@@ -62,13 +63,20 @@ void Login::on_pushButton_clicked()
                 analytic->setAttribute(Qt::WA_DeleteOnClose); // Автоматическое удаление
                 analytic->show();
                 this->hide();
-                m_dataObject->setStringData(user);
             } else {
                 connClose();
                 Profile *profile = new Profile(this);
                 profile->setAttribute(Qt::WA_DeleteOnClose); // Автоматическое удаление
                 profile->show();
                 this->hide();
+
+
+                QString user = "TESTEWDWDQWDAS";
+                qDebug() << (user);
+
+
+                // Trabl
+                emit mySignal(user);
 
             }
 }

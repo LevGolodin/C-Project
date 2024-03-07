@@ -20,7 +20,6 @@ SOURCES += \
     analytic.cpp \
     cons.cpp \
     crew.cpp \
-    dataobject.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -32,7 +31,6 @@ HEADERS += \
     analytic.h \
     cons.h \
     crew.h \
-    dataobject.h \
     login.h \
     mainwindow.h \
     profile.h \
@@ -43,7 +41,6 @@ FORMS += \
     analytic.ui \
     cons.ui \
     crew.ui \
-    dataobject.ui \
     login.ui \
     mainwindow.ui \
     profile.ui \
