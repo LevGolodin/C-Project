@@ -13,8 +13,6 @@ Login::Login(QWidget *parent) :
     ui(new Ui::Login)
 {
     ui->setupUi(this);
-    Profile *profile = new Profile;
-    connect(this,SIGNAL(mySignal(const QString &)), profile,SLOT(mySlot(const QString &)));
 }
 
 Login::~Login()
@@ -34,10 +32,6 @@ void Login::on_pushButton_clicked()
         return;
     }
 
-    if(!connOpen()){
-        qDebug() << "Failed to connect";
-        return;
-    }
 
     QSqlQuery qry;
     qry.prepare("select * from User where username=:username and password=:password");
@@ -58,25 +52,27 @@ void Login::on_pushButton_clicked()
             qry2.bindValue(":username",username);
             if (qry2.exec()){
             if (qry2.next()) {
-                connClose();
+                QSqlQuery qry3;
+                qry3.prepare("INSERT INTO User1 VALUES(:name)");
+                qry3.bindValue(":name",username);
+                if(!qry3.exec())
+                    qDebug() << "Failed to load username";
                 Analytic *analytic = new Analytic(this);
                 analytic->setAttribute(Qt::WA_DeleteOnClose); // Автоматическое удаление
                 analytic->show();
                 this->hide();
+
             } else {
-                connClose();
+                QSqlQuery qry3;
+                qry3.prepare("INSERT INTO User1 VALUES(:name)");
+                qry3.bindValue(":name",username);
+                if(!qry3.exec())
+                    qDebug() << "Failed to load username";
+
                 Profile *profile = new Profile(this);
                 profile->setAttribute(Qt::WA_DeleteOnClose); // Автоматическое удаление
                 profile->show();
                 this->hide();
-
-
-                QString user = "TESTEWDWDQWDAS";
-                qDebug() << (user);
-
-
-                // Trabl
-                emit mySignal(user);
 
             }
 }
@@ -85,7 +81,6 @@ void Login::on_pushButton_clicked()
             ui->Status->setText("Username or password is incorrect");
         }
     }
-    connClose();
 }
 
 void Login::on_pushButton_2_clicked()

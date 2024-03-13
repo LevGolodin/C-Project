@@ -1,6 +1,6 @@
 QT       += core gui sql
 
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets printsupport
 
 CONFIG += c++11
 
@@ -15,22 +15,35 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
+INCLUDEPATH += include/
+VPATH += src/
+
 SOURCES += \
     aboutus.cpp \
     analytic.cpp \
     cons.cpp \
     crew.cpp \
+    expense.cpp \
+    expenseredact.cpp \
+    income.cpp \
+    incomeredact.cpp \
     login.cpp \
     main.cpp \
     mainwindow.cpp \
     profile.cpp \
-    registration.cpp
+    registration.cpp \
+    src/qcustomplot.cpp
 
 HEADERS += \
     aboutus.h \
     analytic.h \
     cons.h \
     crew.h \
+    expense.h \
+    expenseredact.h \
+    include/qcustomplot.h \
+    income.h \
+    incomeredact.h \
     login.h \
     mainwindow.h \
     profile.h \
@@ -41,6 +54,10 @@ FORMS += \
     analytic.ui \
     cons.ui \
     crew.ui \
+    expense.ui \
+    expenseredact.ui \
+    income.ui \
+    incomeredact.ui \
     login.ui \
     mainwindow.ui \
     profile.ui \

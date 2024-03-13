@@ -43,11 +43,6 @@ void Registration::on_pushButton_clicked()
         return;
     }
 
-    if (!conn.connOpen()) {
-        qDebug() << "Failed to connect";
-        return;
-    }
-
     try {
         QSqlQuery qry;
         qry.prepare("SELECT * FROM User WHERE username = :username");
@@ -63,13 +58,18 @@ void Registration::on_pushButton_clicked()
                 qry2.bindValue(":password", password);
 
                 if (qry2.exec()) {
-                    conn.connClose();
                     // Создание и показ окна Profile
+                    QSqlQuery qry3;
+                    qry3.prepare("INSERT INTO User1 VALUES(:name)");
+                    qry3.bindValue(":name",username);
+                    if(!qry3.exec())
+                        qDebug() << "Failed to load username";
+                }
                     Profile *profile = new Profile(this);
                     profile->setAttribute(Qt::WA_DeleteOnClose); // Автоматическое удаление
                     profile->show();
                     this->hide();
-                }
+
             }
         }
     } catch (const std::exception& e) {
