@@ -21,6 +21,8 @@ VPATH += src/
 SOURCES += \
     aboutus.cpp \
     analytic.cpp \
+    categoryexpense.cpp \
+    categoryincome.cpp \
     cons.cpp \
     crew.cpp \
     expense.cpp \
@@ -37,6 +39,8 @@ SOURCES += \
 HEADERS += \
     aboutus.h \
     analytic.h \
+    categoryexpense.h \
+    categoryincome.h \
     cons.h \
     crew.h \
     expense.h \
@@ -52,6 +56,8 @@ HEADERS += \
 FORMS += \
     aboutus.ui \
     analytic.ui \
+    categoryexpense.ui \
+    categoryincome.ui \
     cons.ui \
     crew.ui \
     expense.ui \

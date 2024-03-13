@@ -7,7 +7,7 @@ bool init()
 {
     // Connect + unmarshall config + log err
     QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("C:/Users/ЛЕВ/Desktop/C-Project/LevProject.db");
+    mydb.setDatabaseName("C:/Users/ISP920/Desktop/C-Project/LevProject.db");
 
     if(!mydb.open()){
         qDebug()<<("Failed to open the database");

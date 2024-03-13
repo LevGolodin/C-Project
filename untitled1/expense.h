@@ -20,6 +20,15 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_addExtense_clicked();
+
+public slots:
+
+    void addItem();
+
+    void eraseItem();
+
+
 private:
     Ui::Expense *ui;
 };
