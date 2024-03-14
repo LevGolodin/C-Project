@@ -19,7 +19,8 @@ Income::Income(QWidget *parent) :
             qDebug() << "Login from database: " << login;
             ui->setupUi(this);
 
-    auto actInsert = new QAction("Insert", this);
+    auto actInsert = new QAction("Insert category", this);
+    auto actInsert2 = new QAction("Insert income", this);
     auto actDelete = new QAction("Delete", this);
 
     // you can set up slot connections here or in designer
@@ -29,6 +30,8 @@ Income::Income(QWidget *parent) :
     // and this will take care of everything else:
     ui->listWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
     ui->listWidget->addActions({ actInsert, actDelete });
+    ui->listWidget_2->setContextMenuPolicy(Qt::ActionsContextMenu);
+    ui->listWidget_2->addActions({ actInsert2, actDelete });
     QSqlQuery qry;
     qry.prepare("SELECT name FROM CategoryIncome");
     if(qry.exec()){
@@ -78,6 +81,12 @@ void Income::addItem () {
     CategoryIncome *cin = new CategoryIncome(this);
     cin->setAttribute(Qt::WA_DeleteOnClose);
     cin->show();
+}
+
+void Income::addItem2 () {
+    Incomeredact *inr = new Incomeredact(this);
+    inr->setAttribute(Qt::WA_DeleteOnClose);
+    inr->show();
 }
 
 void Income::eraseItem () {

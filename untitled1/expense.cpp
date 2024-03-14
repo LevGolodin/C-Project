@@ -19,16 +19,20 @@ Expense::Expense(QWidget *parent) :
             qDebug() << "Login from database: " << login;
             ui->setupUi(this);
 
-    auto actInsert = new QAction("Insert", this);
+    auto actInsert = new QAction("Insert category", this);
     auto actDelete = new QAction("Delete", this);
+    auto actInsert2 = new QAction("Insert expense", this);
 
     // you can set up slot connections here or in designer
     connect(actInsert, SIGNAL(triggered()), this, SLOT(addItem()));
+    connect(actInsert2, SIGNAL(triggered()), this, SLOT(addItem2()));
     connect(actDelete, SIGNAL(triggered()), this, SLOT(eraseItem()));
 
     // and this will take care of everything else:
     ui->listWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
-    ui->listWidget->addActions({ actInsert, actDelete });
+    ui->listWidget->addActions({ actInsert, actDelete, });
+    ui->listWidget_3->setContextMenuPolicy(Qt::ActionsContextMenu);
+    ui->listWidget_3->addActions({ actDelete, actInsert2 });
     QSqlQuery qry;
     qry.prepare("SELECT name FROM Category");
     if(qry.exec()){
@@ -78,11 +82,16 @@ void Expense::on_addExtense_clicked()
     ered->show();
 }
 
-
 void Expense::addItem () {
     CategoryExpense *cex = new CategoryExpense(this);
     cex->setAttribute(Qt::WA_DeleteOnClose);
     cex->show();
+}
+
+void Expense::addItem2 () {
+    Expenseredact *exr = new Expenseredact(this);
+    exr->setAttribute(Qt::WA_DeleteOnClose);
+    exr->show();
 }
 
 void Expense::eraseItem () {

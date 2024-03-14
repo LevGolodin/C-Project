@@ -44,6 +44,9 @@ public:
     QVBoxLayout *verticalLayout;
     QPushButton *pushButton_3;
     QPushButton *pushButton_4;
+    QScrollArea *scrollArea_2;
+    QWidget *scrollAreaWidgetContents_3;
+    QListWidget *listWidget_3;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -124,6 +127,17 @@ public:
 
         verticalLayout->addWidget(pushButton_4);
 
+        scrollArea_2 = new QScrollArea(centralwidget);
+        scrollArea_2->setObjectName(QString::fromUtf8("scrollArea_2"));
+        scrollArea_2->setGeometry(QRect(130, 150, 271, 141));
+        scrollArea_2->setWidgetResizable(true);
+        scrollAreaWidgetContents_3 = new QWidget();
+        scrollAreaWidgetContents_3->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_3"));
+        scrollAreaWidgetContents_3->setGeometry(QRect(0, 0, 269, 139));
+        listWidget_3 = new QListWidget(scrollAreaWidgetContents_3);
+        listWidget_3->setObjectName(QString::fromUtf8("listWidget_3"));
+        listWidget_3->setGeometry(QRect(10, 10, 251, 121));
+        scrollArea_2->setWidget(scrollAreaWidgetContents_3);
         Expense->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Expense);
         menubar->setObjectName(QString::fromUtf8("menubar"));
@@ -142,7 +156,7 @@ public:
     {
         Expense->setWindowTitle(QCoreApplication::translate("Expense", "MainWindow", nullptr));
         label_5->setText(QCoreApplication::translate("Expense", "\320\236\321\201\320\275\320\276\320\262\320\275\321\213\320\265 \320\272\320\260\321\202\320\265\320\263\320\276\321\200\320\270\320\270", nullptr));
-        label_2->setText(QCoreApplication::translate("Expense", "\320\222\320\262\320\265\321\201\321\202\320\270 \321\200\320\260\321\201\321\205\320\276\320\264\321\213", nullptr));
+        label_2->setText(QCoreApplication::translate("Expense", "\320\240\320\260\321\201\321\205\320\276\320\264\321\213", nullptr));
         addExtense->setText(QCoreApplication::translate("Expense", "+", nullptr));
         label_3->setText(QCoreApplication::translate("Expense", "\320\236\320\261\321\211\320\270\320\265 \321\200\320\260\321\201\321\205\320\276\320\264\321\213", nullptr));
         label_4->setText(QCoreApplication::translate("Expense", "0", nullptr));

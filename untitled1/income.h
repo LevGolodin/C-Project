@@ -21,6 +21,8 @@ public slots:
 
     void eraseItem();
 
+    void addItem2();
+
 
 private slots:
     void on_pushButton_3_clicked();

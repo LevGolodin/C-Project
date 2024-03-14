@@ -44,6 +44,9 @@ public:
     QLabel *label_3;
     QLabel *label_4;
     QLabel *label_5;
+    QScrollArea *scrollArea_2;
+    QWidget *scrollAreaWidgetContents_2;
+    QListWidget *listWidget_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -124,6 +127,17 @@ public:
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setGeometry(QRect(460, 20, 191, 16));
         label_5->setAlignment(Qt::AlignCenter);
+        scrollArea_2 = new QScrollArea(centralwidget);
+        scrollArea_2->setObjectName(QString::fromUtf8("scrollArea_2"));
+        scrollArea_2->setGeometry(QRect(150, 160, 271, 141));
+        scrollArea_2->setWidgetResizable(true);
+        scrollAreaWidgetContents_2 = new QWidget();
+        scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 269, 139));
+        listWidget_2 = new QListWidget(scrollAreaWidgetContents_2);
+        listWidget_2->setObjectName(QString::fromUtf8("listWidget_2"));
+        listWidget_2->setGeometry(QRect(10, 10, 251, 121));
+        scrollArea_2->setWidget(scrollAreaWidgetContents_2);
         Income->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Income);
         menubar->setObjectName(QString::fromUtf8("menubar"));

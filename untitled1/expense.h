@@ -28,6 +28,8 @@ public slots:
 
     void eraseItem();
 
+    void addItem2();
+
 
 private:
     Ui::Expense *ui;

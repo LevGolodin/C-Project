@@ -78,7 +78,7 @@
        <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>Ввести расходы</string>
+          <string>Расходы</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -145,6 +145,39 @@
       </widget>
      </item>
     </layout>
+   </widget>
+   <widget class="QScrollArea" name="scrollArea_2">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>150</y>
+      <width>271</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="widgetResizable">
+     <bool>true</bool>
+    </property>
+    <widget class="QWidget" name="scrollAreaWidgetContents_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>269</width>
+       <height>139</height>
+      </rect>
+     </property>
+     <widget class="QListWidget" name="listWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>251</width>
+        <height>121</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
