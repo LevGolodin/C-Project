@@ -3,6 +3,7 @@
 #include "income.h"
 #include "expense.h"
 #include <QDate>
+#include <QtSql>
 
 Analytic::Analytic(QWidget *parent) :
     QMainWindow(parent),
@@ -15,6 +16,18 @@ Analytic::Analytic(QWidget *parent) :
     QString currentDateString = currentDate.toString("dd.MM.yyyy");
     ui->label_4->setText(currentDateString);
     ui->label_5->setText(currentDateString);
+    QSqlQuery qry;
+    qry.prepare("SELECT SUM(income) FROM Income WHERE date = '"+ currentDateString + "'");
+    if(qry.exec())
+    {
+        ui->label_3->setNum(qry.value(0).toInt());
+    }
+    qry.prepare("SELECT SUM(expense) FROM Expense WHERE date = '"+ currentDateString + "'");
+    if(qry.exec())
+    {
+        ui->label_7->setNum(qry.value(0).toInt());
+    }
+
 }
 
 Analytic::~Analytic()

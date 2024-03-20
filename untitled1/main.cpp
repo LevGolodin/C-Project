@@ -7,7 +7,7 @@ bool init()
 {
     // Connect + unmarshall config + log err
     QSqlDatabase mydb = QSqlDatabase::addDatabase("QSQLITE");
-    mydb.setDatabaseName("C:/Users/ЛЕВ/Desktop/C-Project/LevProject.db");
+    mydb.setDatabaseName("C:/Users/ISP920/Desktop/C-Project/LevProject.db");
 
     if(!mydb.open()){
         qDebug()<<("Failed to open the database");
@@ -17,8 +17,13 @@ bool init()
         qDebug()<<("Connected...");
         QSqlQuery qry;
         qry.prepare("DELETE from User1");
-        qry.exec();
-        return true;
+        if(qry.exec()) {
+                qDebug() << "Data deleted from User table.";
+                return true;
+            } else {
+                qDebug() << "Error deleting data: " << qry.lastError().text();
+                return false;
+            }
     }
 }
 

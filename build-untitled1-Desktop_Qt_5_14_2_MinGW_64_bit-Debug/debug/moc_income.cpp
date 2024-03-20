@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Income_t {
     QByteArrayData data[7];
-    char stringdata0[95];
+    char stringdata0[83];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -36,14 +36,13 @@ QT_MOC_LITERAL(0, 0, 6), // "Income"
 QT_MOC_LITERAL(1, 7, 7), // "addItem"
 QT_MOC_LITERAL(2, 15, 0), // ""
 QT_MOC_LITERAL(3, 16, 9), // "eraseItem"
-QT_MOC_LITERAL(4, 26, 23), // "on_pushButton_3_clicked"
-QT_MOC_LITERAL(5, 50, 23), // "on_pushButton_4_clicked"
-QT_MOC_LITERAL(6, 74, 20) // "on_addIncome_clicked"
+QT_MOC_LITERAL(4, 26, 8), // "addItem2"
+QT_MOC_LITERAL(5, 35, 23), // "on_pushButton_3_clicked"
+QT_MOC_LITERAL(6, 59, 23) // "on_pushButton_4_clicked"
 
     },
-    "Income\0addItem\0\0eraseItem\0"
-    "on_pushButton_3_clicked\0on_pushButton_4_clicked\0"
-    "on_addIncome_clicked"
+    "Income\0addItem\0\0eraseItem\0addItem2\0"
+    "on_pushButton_3_clicked\0on_pushButton_4_clicked"
 };
 #undef QT_MOC_LITERAL
 
@@ -63,7 +62,7 @@ static const uint qt_meta_data_Income[] = {
  // slots: name, argc, parameters, tag, flags
        1,    0,   39,    2, 0x0a /* Public */,
        3,    0,   40,    2, 0x0a /* Public */,
-       4,    0,   41,    2, 0x08 /* Private */,
+       4,    0,   41,    2, 0x0a /* Public */,
        5,    0,   42,    2, 0x08 /* Private */,
        6,    0,   43,    2, 0x08 /* Private */,
 
@@ -85,9 +84,9 @@ void Income::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
         switch (_id) {
         case 0: _t->addItem(); break;
         case 1: _t->eraseItem(); break;
-        case 2: _t->on_pushButton_3_clicked(); break;
-        case 3: _t->on_pushButton_4_clicked(); break;
-        case 4: _t->on_addIncome_clicked(); break;
+        case 2: _t->addItem2(); break;
+        case 3: _t->on_pushButton_3_clicked(); break;
+        case 4: _t->on_pushButton_4_clicked(); break;
         default: ;
         }
     }

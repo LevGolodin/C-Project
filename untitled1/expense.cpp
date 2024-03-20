@@ -43,7 +43,25 @@ Expense::Expense(QWidget *parent) :
     else {
         qDebug() << "No records found in db";
     }
+    QSqlQuery qry1;
+    qry1.prepare("Select expense || ' - ' || date || ' - ' || Category.name AS Expense  FROM Expense JOIN Category ON Expense.idCategory = Category.id WHERE idUser = (SELECT id FROM User Where username = (Select name FROm User1))");
+    if(qry1.exec()){
+        while (qry1.next()){
+            QString income = qry1.value(0).toString();
+            qDebug() << "Expense: " << income;
+            ui->listWidget_3->addItem(income);
+        }
+    } else {
+        qDebug() << "Error executing query: " << qry1.lastError().text();
     }
+    qry.prepare("SELECT SUM(expense) FROM Expense WHERE idUser = (SELECT id FROM User WHERE username = '"+ login +"')");
+    qry.exec();
+    while(qry.next())
+    {
+        ui->label_4->setNum(qry.value(0).toInt());
+    }
+    }
+
         } else {
             qDebug() << "No records found in the query result";
         }

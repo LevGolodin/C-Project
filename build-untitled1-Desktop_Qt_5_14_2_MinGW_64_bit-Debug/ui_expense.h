@@ -34,9 +34,6 @@ public:
     QListWidget *listWidget;
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
-    QVBoxLayout *verticalLayout_3;
-    QLabel *label_2;
-    QPushButton *addExtense;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_3;
     QLabel *label_4;
@@ -78,22 +75,6 @@ public:
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        verticalLayout_3 = new QVBoxLayout();
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        label_2 = new QLabel(layoutWidget);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_3->addWidget(label_2);
-
-        addExtense = new QPushButton(layoutWidget);
-        addExtense->setObjectName(QString::fromUtf8("addExtense"));
-
-        verticalLayout_3->addWidget(addExtense);
-
-
-        horizontalLayout->addLayout(verticalLayout_3);
-
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         label_3 = new QLabel(layoutWidget);
@@ -156,8 +137,6 @@ public:
     {
         Expense->setWindowTitle(QCoreApplication::translate("Expense", "MainWindow", nullptr));
         label_5->setText(QCoreApplication::translate("Expense", "\320\236\321\201\320\275\320\276\320\262\320\275\321\213\320\265 \320\272\320\260\321\202\320\265\320\263\320\276\321\200\320\270\320\270", nullptr));
-        label_2->setText(QCoreApplication::translate("Expense", "\320\240\320\260\321\201\321\205\320\276\320\264\321\213", nullptr));
-        addExtense->setText(QCoreApplication::translate("Expense", "+", nullptr));
         label_3->setText(QCoreApplication::translate("Expense", "\320\236\320\261\321\211\320\270\320\265 \321\200\320\260\321\201\321\205\320\276\320\264\321\213", nullptr));
         label_4->setText(QCoreApplication::translate("Expense", "0", nullptr));
         pushButton_3->setText(QCoreApplication::translate("Expense", "\320\220\320\275\320\260\320\273\320\270\321\202\320\270\320\272\320\260", nullptr));

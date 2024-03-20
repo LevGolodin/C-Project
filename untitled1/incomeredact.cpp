@@ -57,7 +57,7 @@ void Incomeredact::on_pushButton_clicked()
             QString login = qry.value(0).toString();
             qDebug() << "Login from database: " << login;
              QSqlQuery qry;
-             qry.prepare("Select name from CategoryIncome where name = '"+ category+ "'");
+             qry.prepare("Select id from CategoryIncome where name = '"+ category+ "'");
              qry.exec();
              if(qry.next())
              {
@@ -71,6 +71,9 @@ void Incomeredact::on_pushButton_clicked()
                  if(qry1.exec())
                  {
                      ui->label_3->setText("Данные успешно введены");
+                 }
+                 else{
+                     qDebug() << "Error";
                  }
 
              }

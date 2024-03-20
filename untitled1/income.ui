@@ -128,10 +128,10 @@
    <widget class="QScrollArea" name="scrollArea_2">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>160</y>
+      <x>160</x>
+      <y>180</y>
       <width>271</width>
-      <height>141</height>
+      <height>171</height>
      </rect>
     </property>
     <property name="widgetResizable">
@@ -143,7 +143,7 @@
        <x>0</x>
        <y>0</y>
        <width>269</width>
-       <height>139</height>
+       <height>169</height>
       </rect>
      </property>
      <widget class="QListWidget" name="listWidget_2">
@@ -152,7 +152,7 @@
         <x>10</x>
         <y>10</y>
         <width>251</width>
-        <height>121</height>
+        <height>151</height>
        </rect>
       </property>
      </widget>

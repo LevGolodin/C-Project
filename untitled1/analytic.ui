@@ -47,7 +47,7 @@
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>90</x>
@@ -62,7 +62,7 @@
        <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>Расходы за текущий месяц</string>
+          <string>Расходы за текущую дату</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -96,7 +96,7 @@
        <item>
         <widget class="QLabel" name="label_6">
          <property name="text">
-          <string>Доходы за текущий месяц</string>
+          <string>Доходы за текущую дату</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -151,7 +151,7 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>

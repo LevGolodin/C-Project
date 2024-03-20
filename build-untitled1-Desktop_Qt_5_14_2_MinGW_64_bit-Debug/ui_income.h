@@ -37,9 +37,6 @@ public:
     QPushButton *pushButton_4;
     QWidget *layoutWidget_2;
     QHBoxLayout *horizontalLayout;
-    QVBoxLayout *verticalLayout_3;
-    QLabel *label_2;
-    QPushButton *addIncome;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_3;
     QLabel *label_4;
@@ -90,22 +87,6 @@ public:
         horizontalLayout = new QHBoxLayout(layoutWidget_2);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        verticalLayout_3 = new QVBoxLayout();
-        verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
-        label_2 = new QLabel(layoutWidget_2);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setAlignment(Qt::AlignCenter);
-
-        verticalLayout_3->addWidget(label_2);
-
-        addIncome = new QPushButton(layoutWidget_2);
-        addIncome->setObjectName(QString::fromUtf8("addIncome"));
-
-        verticalLayout_3->addWidget(addIncome);
-
-
-        horizontalLayout->addLayout(verticalLayout_3);
-
         verticalLayout_2 = new QVBoxLayout();
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         label_3 = new QLabel(layoutWidget_2);
@@ -129,14 +110,14 @@ public:
         label_5->setAlignment(Qt::AlignCenter);
         scrollArea_2 = new QScrollArea(centralwidget);
         scrollArea_2->setObjectName(QString::fromUtf8("scrollArea_2"));
-        scrollArea_2->setGeometry(QRect(150, 160, 271, 141));
+        scrollArea_2->setGeometry(QRect(160, 180, 271, 171));
         scrollArea_2->setWidgetResizable(true);
         scrollAreaWidgetContents_2 = new QWidget();
         scrollAreaWidgetContents_2->setObjectName(QString::fromUtf8("scrollAreaWidgetContents_2"));
-        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 269, 139));
+        scrollAreaWidgetContents_2->setGeometry(QRect(0, 0, 269, 169));
         listWidget_2 = new QListWidget(scrollAreaWidgetContents_2);
         listWidget_2->setObjectName(QString::fromUtf8("listWidget_2"));
-        listWidget_2->setGeometry(QRect(10, 10, 251, 121));
+        listWidget_2->setGeometry(QRect(10, 10, 251, 151));
         scrollArea_2->setWidget(scrollAreaWidgetContents_2);
         Income->setCentralWidget(centralwidget);
         menubar = new QMenuBar(Income);
@@ -157,8 +138,6 @@ public:
         Income->setWindowTitle(QCoreApplication::translate("Income", "MainWindow", nullptr));
         pushButton_3->setText(QCoreApplication::translate("Income", "\320\220\320\275\320\260\320\273\320\270\321\202\320\270\320\272\320\260", nullptr));
         pushButton_4->setText(QCoreApplication::translate("Income", "\320\240\320\260\321\201\321\205\320\276\320\264\321\213", nullptr));
-        label_2->setText(QCoreApplication::translate("Income", "\320\222\320\262\320\265\321\201\321\202\320\270 \320\264\320\276\321\205\320\276\320\264\321\213", nullptr));
-        addIncome->setText(QCoreApplication::translate("Income", "+", nullptr));
         label_3->setText(QCoreApplication::translate("Income", "\320\236\320\261\321\211\320\270\320\265 \320\264\320\276\321\205\320\276\320\264\321\213", nullptr));
         label_4->setText(QCoreApplication::translate("Income", "0", nullptr));
         label_5->setText(QCoreApplication::translate("Income", "\320\236\321\201\320\275\320\276\320\262\320\275\321\213\320\265 \320\272\320\260\321\202\320\265\320\263\320\276\321\200\320\270\320\270", nullptr));
