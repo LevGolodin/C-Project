@@ -26,6 +26,7 @@ Income::Income(QWidget *parent) :
     // you can set up slot connections here or in designer
     connect(actInsert, SIGNAL(triggered()), this, SLOT(addItem()));
     connect(actDelete, SIGNAL(triggered()), this, SLOT(eraseItem()));
+    connect(actInsert2, SIGNAL(triggered()), this, SLOT(addItem2()));
 
     // and this will take care of everything else:
     ui->listWidget->setContextMenuPolicy(Qt::ActionsContextMenu);
@@ -70,12 +71,6 @@ void Income::on_pushButton_4_clicked()
     this->hide();
 }
 
-void Income::on_addIncome_clicked()
-{
-    Incomeredact *ired = new Incomeredact(this);
-    ired->setAttribute(Qt::WA_DeleteOnClose);
-    ired->show();
-}
 
 void Income::addItem () {
     CategoryIncome *cin = new CategoryIncome(this);

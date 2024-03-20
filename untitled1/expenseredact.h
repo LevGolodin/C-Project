@@ -15,6 +15,9 @@ public:
     explicit Expenseredact(QWidget *parent = nullptr);
     ~Expenseredact();
 
+private slots:
+    void on_pushButton_2_clicked();
+
 private:
     Ui::Expenseredact *ui;
 };

@@ -75,12 +75,6 @@ void Expense::on_pushButton_4_clicked()
     this->hide();
 }
 
-void Expense::on_addExtense_clicked()
-{
-    Expenseredact *ered = new Expenseredact(this);
-    ered->setAttribute(Qt::WA_DeleteOnClose);
-    ered->show();
-}
 
 void Expense::addItem () {
     CategoryExpense *cex = new CategoryExpense(this);

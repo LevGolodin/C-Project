@@ -29,7 +29,6 @@ private slots:
 
     void on_pushButton_4_clicked();
 
-    void on_addIncome_clicked();
 
 private:
     Ui::Income *ui;
