@@ -9,7 +9,14 @@ Analytic::Analytic(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Analytic)
 {
-    ui->setupUi(this);
+    QSqlQuery qry;
+    qry.prepare("SELECT name FROM User1");
+
+    if (qry.exec()) {
+        if (qry.next()){
+            QString login = qry.value(0).toString();
+            qDebug() << "Login from database: " << login;
+            ui->setupUi(this);
     QDate currentDate = QDate::currentDate();
 
     // Преобразуем текущую дату в строку
@@ -17,18 +24,23 @@ Analytic::Analytic(QWidget *parent) :
     ui->label_4->setText(currentDateString);
     ui->label_5->setText(currentDateString);
     QSqlQuery qry;
-    qry.prepare("SELECT SUM(income) FROM Income WHERE date = '"+ currentDateString + "'");
+    qry.prepare("SELECT SUM(income) FROM Income WHERE date = (SELECT strftime('%d.%m.%Y', date('now'))) and idUser = (SELECT id FROM User WHERE username = '"+ login +"')");
     if(qry.exec())
+        if(qry.next())
     {
         ui->label_3->setNum(qry.value(0).toInt());
     }
-    qry.prepare("SELECT SUM(expense) FROM Expense WHERE date = '"+ currentDateString + "'");
+    qry.prepare("SELECT SUM(expense) FROM Expense WHERE date = (SELECT strftime('%d.%m.%Y', date('now')))and idUser = (SELECT id FROM User WHERE username = '"+ login +"')");
     if(qry.exec())
+        if(qry.next())
     {
         ui->label_7->setNum(qry.value(0).toInt());
     }
 
 }
+    }
+}
+
 
 Analytic::~Analytic()
 {
